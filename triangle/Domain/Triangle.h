@@ -1,41 +1,35 @@
 #pragma once
+
 /**
-* @brief Класс Треугольник.
+* @brief РљР»Р°СЃСЃ РўСЂРµСѓРіРѕР»СЊРЅРёРє.
 */
 
 class Triangle
 {
 private:
 	/**
-	* @brief Стороны.
+	* @brief РЎС‚РѕСЂРѕРЅС‹.
 	*/
-	double side_A, side_B, side_C;
+	double side_A, side_B, side_C,angle_A, angle_B, angle_C;
 public:
 	/**
-	* @brief расчитывает периметр.
-	* @retutn периметр.
+	* @brief СЂР°СЃС‡РёС‚С‹РІР°РµС‚ РїРµСЂРёРјРµС‚СЂ.
+	* @retutn РїРµСЂРёРјРµС‚СЂ.
 	*/
-	GetPerimetr();
+	double GetPerimetr() const;
 	/**
-	* @brief расчитывает площадь.
-	* @retutn площадь.
+	* @brief СЂР°СЃС‡РёС‚С‹РІР°РµС‚ РїР»РѕС‰Р°РґСЊ.
+	* @retutn РїР»РѕС‰Р°РґСЊ.
 	*/
-	GetArea();
+	double GetArea() const;
 	/**
-	* @brief расчитывает угол.
-	* @param имя стороны, противоположенной искомому углу - 'A','B' или 'C'
-	* @retutn угол в радианах.
+	* @brief СЂР°СЃС‡РёС‚С‹РІР°РµС‚ СѓРіРѕР».
+	* @param РёРјСЏ СЃС‚РѕСЂРѕРЅС‹, РїСЂРѕС‚РёРІРѕРїРѕР»РѕР¶РµРЅРЅРѕР№ РёСЃРєРѕРјРѕРјСѓ СѓРіР»Сѓ - 'A','B' РёР»Рё 'C'
+	* @retutn СѓРіРѕР» РІ СЂР°РґРёР°РЅР°С….
 	*/
-	GetAngle(const char side);
-	/**
-	* @brief расчитывает высоту.
-	* @param имя стороны, на которую опущена высота -  'A','B' или 'C'
-	* @retutn длина высоты.
-	*/
-	GetHeight(const char side);
-	/**
-	* @brief инициализизирует объект Triangle.
-	* @param  side - сторона.
-	*/
+	
 	Triangle(const double side_A, const double side_B, const double side_C);
+
+	std::string ToString() const;
+
 };
