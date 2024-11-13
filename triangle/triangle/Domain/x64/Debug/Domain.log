@@ -1,0 +1,4 @@
+﻿  Triangle.cpp
+C:\максим 2024 осень\triangle\Domain\Triangle.cpp(55,1): warning C4715: Triangle::GetHeight: значение возвращается не при всех путях выполнения
+C:\максим 2024 осень\triangle\Domain\Triangle.cpp(35,1): warning C4715: Triangle::GetAngle: значение возвращается не при всех путях выполнения
+  Domain.vcxproj -> C:\максим 2024 осень\triangle\x64\Debug\Domain.lib
