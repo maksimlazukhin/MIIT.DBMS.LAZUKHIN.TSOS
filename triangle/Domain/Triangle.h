@@ -10,30 +10,18 @@ private:
 	/**
 	* @brief Стороны.
 	*/
-	double side_a, side_b, side_c, angle_a, angle_b, angle_c;
+	double a, b, c, angle_a, angle_b, angle_c;
 public:
 	/**
 	* @brief расчитывает периметр.
 	* @retutn периметр.
 	*/
-	double GetPerimetr();
+	double GetPerimetr() const;
 	/**
 	* @brief расчитывает площадь.
 	* @retutn площадь.
 	*/
 	double GetArea() const;
-	/**
-	* @brief расчитывает угол.
-	* @param имя стороны, противоположенной искомому углу - 'A','B' или 'C'
-	* @retutn угол в радианах.
-	*/
-	double GetAngle(const char side);
-	/**
-	* @brief расчитывает высоту.
-	* @param имя стороны, на которую опущена высота -  'A','B' или 'C'
-	* @retutn длина высоты.
-	*/
-	double GetHeight(const char side);
 	/**
 	* @brief инициализизирует объект Triangle.
 	* @param  side - сторона.

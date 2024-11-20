@@ -4,54 +4,16 @@
 #include "Triangle.h"
 
 
-double Triangle::GetPerimetr()
+double Triangle::GetPerimetr() const
 {
-	return this->side_a + this->side_b + this->side_c;
+	return this-> a + this-> b + this-> c;
 }
 
 double Triangle::GetArea() const
 {
-	return this->side_a * this->side_b * sin(this->angle_c) / 2; 
+	return this-> a * this-> b * sin(this->angle_c) / 2; 
 }
 
-double Triangle::GetAngle(const char side)
-{
-	switch (side)
-	{
-	case 'A':
-		return this->angle_a;
-		break;
-	case 'B':
-		return this->angle_b;
-		break;
-	case 'C':
-		return this->angle_c;
-		break;
-	default:
-		std::out_of_range("Неправильно задан угол");
-		break;
-	}
-}
-
-double Triangle::GetHeight(const char side)
-{
-	switch (side)
-	{
-	case 'A':
-		return this->side_b * sin(this->angle_c);
-		break;
-	case 'B':
-		return this->side_a * sin(this->angle_c);
-		break;
-	case 'C':
-		return this->side_b * sin(this->angle_a);
-		break;
-	default:
-		std::out_of_range("Неправильно задана сторона");
-		break;
-	}
-
-}
 
 Triangle::Triangle(const double side_a, const double side_b, const double side_c)
 {
@@ -59,9 +21,9 @@ Triangle::Triangle(const double side_a, const double side_b, const double side_c
 		std::out_of_range("Неправильно заданы стороны");
 	else
 	{
-		this->side_a = side_a;
-		this->side_b = side_b;
-		this->side_c = side_c;
+		this->a = side_a;
+		this->b = side_b;
+		this->c = side_c;
 		this->angle_a = acos((side_b * side_b + side_c * side_c - side_a * side_a) / (2.0 * side_b * side_c));	/* по теореме косинусов */
 		this->angle_b = acos((side_a * side_a + side_c * side_c - side_b * side_b) / 2.0 / side_a / side_c);
 		this->angle_c = acos((side_a * side_a + side_b * side_b - side_c * side_c) / 2.0 / side_a / side_b);
@@ -71,7 +33,7 @@ Triangle::Triangle(const double side_a, const double side_b, const double side_c
 std::string Triangle::ToString() const
 {
 	std::stringstream buffer{};
-	buffer << " A " << this->side_a << " B "<< this->side_b << " C "<< this->side_c << "\n";
+	buffer << " A " << this->a << " B "<< this->b << " C "<< this->c << "\n";
 	return buffer.str();
 	
 }
